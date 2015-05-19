@@ -86,7 +86,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pl'
 
 USE_I18N = True
 
@@ -116,3 +116,7 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
