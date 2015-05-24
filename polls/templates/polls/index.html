@@ -1,0 +1,41 @@
+
+
+
+{% extends '/Users/ola/Downloads/Nowy folder/KBN1/polls/templates/polls/base_site.html' %}
+
+
+{% block content %}
+
+ <br /><a href="/wyszukaj/">Wyszukiwarka</a>
+        <ul>
+    {% for offer in offer_list %}
+
+
+
+
+        <div id = "oferta">
+            <B>{{offer.name}}<br /> Cena:{{ offer.price }}</B>
+    {% if user.is_authenticated %}
+            <br /><a href="bucket_add/{{ offer.id }}/{{ user.username }}/">Dodaj do koszyka</a>
+    {% endif %}
+        <br /><a href="offer/details/{{ offer.id }}/">Szczegóły oferty</a>
+
+        </div>
+
+
+         <style type="text/css">
+
+  #oferta { width: 250px;
+            border: solid 1px #000;
+            padding: 10px;
+            margin: 40px;
+            float: left; }
+
+    </style>
+
+
+    {% endfor %}
+    </ul>
+
+
+{% endblock %}

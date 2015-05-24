@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+
+{% extends '/Users/ola/Downloads/Nowy folder/KBN1/polls/templates/polls/base_site.html' %}
+
+
+{% block content %}
+
+    <h1> Wypełnij te pola które są dla Ciebie interesujące, </br>pozostałe możesz zostawić puste</h1>
+
+
+<form action="/wyszukaj/" method="post" enctype="multipart/form-data">{% csrf_token %}
+<ul>
+{{form.as_ul}}
+</ul>
+
+<input type="submit" name="submit" value="Wyszukaj">
+</form>
+
+{% endblock %}
+
+
+</body>
+</html>

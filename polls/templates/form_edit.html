@@ -1,0 +1,10 @@
+
+{% extends '/Users/ola/Downloads/Nowy folder/KBN1/polls/templates/polls/base_site.html' %}
+
+{% block content %}
+    <h1>New form</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}

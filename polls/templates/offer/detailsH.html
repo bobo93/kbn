@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+
+
+{% extends '/Users/ola/Downloads/Nowy folder/KBN1/polls/templates/polls/base_site.html' %}
+
+
+{% block content %}
+
+
+
+
+<h1>Szczegóły oferty:</h1>
+
+<B>Nazwa oferty:{{offer.name}}<br /> Cena:{{ offer.price }}
+            <br /> Cena:{{ offer.price }}
+                <br /> Dostępność:{{ offer.avaible }}
+                <br /> Status oferty:{{ offer.offerStatus}}
+                <br /> Agent :{{ offer.seller.username}}
+                <br /> Adres: {{offer.local.address  }}
+                <br /> Wielkość: {{offer.local.size  }}
+                <br /> Ilość pokoi :{{ offer.local.numberOfRooms}}
+                <br /> Wyposażenie: {{offer.local.equipment }}
+                <br /> Parking: : {{offer.local.parking }}
+                 <br /> Rozmiar ogrodu:: {{home.gardesSize }}
+                <br /> Ilość balkonów: : {{home.numberOfBalcony }}
+
+
+
+            </B>
+
+
+{% if user.is_authenticated %}
+            <br /><a href="/bucket_add/{{ offer.id }}/{{ user.username }}/">Dodaj do koszyka</a>
+    {% endif %}
+    </br>
+    <a href="/">Wróć do strony głównej</a>
+
+{% endblock %}
+
+
+
+
+
+</body>
+</html>

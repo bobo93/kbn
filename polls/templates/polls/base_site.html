@@ -1,0 +1,70 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>KBN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+
+<body>
+
+      <div style="margin-left: 700px;">
+
+  {% if user.is_authenticated %}
+
+       Zalogowany użytkownik: <b>{{user.username}}</b>    <a href=accounts/logout/>wyloguj się</a>
+       <a href=bucket/{{ user.username}}/  style="margin-left: 170px;"> <span class="glyphicon glyphicon-shopping-cart"></span> Koszyk </a>
+
+      <a href="{% url 'form_new' %}"><span class="glyphicon glyphicon-plus"></span>Dodaj preferencje</a>
+
+
+
+</div>
+
+
+    {% else %}
+     <form action ="/accounts/auth" method="post">{%  csrf_token %}
+     <label for="username">User name:</label>
+     <input type="text" name="username" value="" id ="username">
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" value="" id ="password">
+
+    <input type="submit" value="login" />
+
+
+
+</form>
+      <a href="/accounts/register/"  style="margin-left: 390px;">Rejestracja</a>
+    {% endif %}
+
+</div>
+
+
+   <div class="container">
+  <div class="jumbotron">
+
+    <br /><h1>Kompleksowe Biuro Nieruchomości</h1>
+    <p>Program do zarządzania biurem nieruchomości</p>
+
+  </div>
+
+
+  <div class="content container" style="width:1700px">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>
