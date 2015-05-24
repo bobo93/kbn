@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 BeautifulSoup==3.2.1
 Django==1.8.2
 Pillow==2.8.1
@@ -14,3 +15,11 @@ vboxapi==1.0
 whitenoise==1.0.6
 wsgiref==0.1.2
 psycopg2==2.5.4
+=======
+Django==1.8
+dj-database-url==0.3.0
+gunicorn==19.3.0
+whitenoise==1.0.6
+psycopg2==2.5.4
+
+>>>>>>> f40088e11f6ed6131d4291bf34da929df623c766
