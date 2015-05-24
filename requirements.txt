@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-BeautifulSoup==3.2.1
+
 Django==1.8.2
 Pillow==2.8.1
 beautifulsoup4==4.3.2
