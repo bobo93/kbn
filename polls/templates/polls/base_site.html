@@ -18,9 +18,9 @@
 
   {% if user.is_authenticated %}
 
-       Zalogowany użytkownik: <b>{{user.username}}</b>    <a href=accounts/logout/>wyloguj się</a>
-       <a href=bucket/{{ user.username}}/  style="margin-left: 170px;"> <span class="glyphicon glyphicon-shopping-cart"></span> Koszyk </a>
+       Zalogowany użytkownik: <b>{{user.username}}</b>    <a href="/accounts/logout/">wyloguj się</a>git
 
+       <a href="/bucket/{{ user.username}}/"  style="margin-left: 170px;"> <span class="glyphicon glyphicon-shopping-cart"></span> Koszyk </a>
       <a href="{% url 'form_new' %}"><span class="glyphicon glyphicon-plus"></span>Dodaj preferencje</a>
 
 
